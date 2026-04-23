@@ -9,6 +9,7 @@ export const SITE = {
 } as const;
 
 export const WHATSAPP_LINK = `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(SITE.whatsappText)}`;
+export const CALENDLY_LINK = 'https://calendly.com/julian-viaje20';
 
 export const NAV_LINKS = [
   { href: '/', label: 'Inicio' },

@@ -120,6 +120,18 @@ const websiteSchema = {
           }
         });
       });
+
+      document.querySelectorAll('[data-cta-audit]').forEach((element) => {
+        element.addEventListener('click', () => {
+          const source = element.getAttribute('data-cta-audit') || 'unknown';
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'click_auditoria', { source });
+          }
+          if (window.dataLayer && Array.isArray(window.dataLayer)) {
+            window.dataLayer.push({ event: 'click_auditoria', source });
+          }
+        });
+      });
     </script>
   </body>
 </html>
