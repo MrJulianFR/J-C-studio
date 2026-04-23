@@ -8,20 +8,20 @@ import { WHATSAPP_LINK } from '../data/site';
 
 const benefits = [
   {
-    title: 'Respuesta inmediata 24/7',
-    description: 'Tu bot WhatsApp Medellin responde al instante para que ningun prospecto se enfrie.'
+    title: 'Responde en segundos y no pierdes clientes',
+    description: 'Cada nuevo mensaje recibe respuesta inmediata, incluso fuera de horario.'
   },
   {
-    title: 'Mas citas confirmadas',
-    description: 'Convertimos mensajes en citas automaticas clinicas con flujos orientados a cierre.'
+    title: 'Agenda citas automaticamente',
+    description: 'El sistema propone horarios y lleva al prospecto directo a una cita confirmada.'
   },
   {
-    title: 'Seguimiento que recupera ventas',
-    description: 'La automatizacion WhatsApp clinicas recuerda, insiste y recupera clientes indecisos.'
+    title: 'Hace seguimiento por ti',
+    description: 'Recupera prospectos frios sin que tu equipo persiga manualmente cada chat.'
   },
   {
-    title: 'Equipo comercial mas productivo',
-    description: 'Recepcion y asesores se enfocan en cerrar mientras la IA atiende y clasifica.'
+    title: 'Convierte mas conversaciones en ventas',
+    description: 'Menos preguntas sueltas y mas pacientes listos para tratamiento.'
   }
 ];
 
@@ -32,7 +32,7 @@ const testimonials = [
     clinic: 'Directora, Clinica Armonia Facial'
   },
   {
-    quote: 'Antes perdiamos prospectos por mensajes sin respuesta. Ahora llegan mejor calificados y listos para comprar.',
+    quote: 'Ahora tenemos citas todos los dias sin estar pegados al WhatsApp.',
     name: 'Camilo Restrepo',
     clinic: 'Gerente, Medicina Estetica Nova Skin'
   },
@@ -64,32 +64,29 @@ const faqs = [
 ---
 
 <Layout
-  title="J&C Studio | Automatizacion WhatsApp clinicas para mas citas en Medellin"
-  description="J&C Studio implementa chatbot para clinicas esteticas: automatizacion WhatsApp clinicas, bot WhatsApp Medellin y mas citas por WhatsApp con seguimiento inteligente."
+  title="J&C Studio | Convierte mensajes de WhatsApp en citas automaticamente"
+  description="Automatizacion WhatsApp clinicas para convertir mensajes en citas automaticamente. Respuesta rapida, seguimiento y mas ventas para clinicas esteticas en Medellin."
   path="/"
 >
   <Hero
-    title="Haz que cada mensaje en WhatsApp se convierta en una cita para tu clinica"
-    subtitle="En J&C Studio implementamos automatizacion para clinicas en Colombia para responder en segundos, calificar pacientes y agendar mas rapido. Menos chats perdidos, mas procedimientos vendidos."
+    title="Convierte mensajes de WhatsApp en citas automaticamente"
+    subtitle="Implementamos un sistema que responde en segundos, hace seguimiento y convierte prospectos en pacientes sin que pierdas oportunidades."
+    ctaText="Probar ahora en WhatsApp"
     ctaHref={WHATSAPP_LINK}
   />
 
-  <section class="mx-auto w-full max-w-6xl px-4 py-12 md:px-8 md:py-16">
-    <div class="grid gap-4 md:grid-cols-3">
-      <article class="surface-card p-6" data-reveal>
-        <p class="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">Problema</p>
-        <h2 class="mt-2 text-2xl font-black text-slate-900">Leads que se enfrien por demora en respuesta</h2>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">Cuando un prospecto escribe a varias clinicas, cierra con quien responde primero y mejor. Responder tarde cuesta ventas todos los dias.</p>
+  <section class="mx-auto w-full max-w-6xl px-4 py-6 md:px-8 md:py-8">
+    <div class="grid gap-4 md:grid-cols-2">
+      <article class="rounded-2xl border border-rose-200 bg-rose-50 p-6" data-reveal>
+        <p class="text-xs font-bold uppercase tracking-[0.14em] text-rose-700">Dolor real</p>
+        <h2 class="mt-2 text-2xl font-black text-rose-900">La mayoria de clinicas pierde clientes por responder tarde o no hacer seguimiento</h2>
+        <p class="mt-3 text-sm leading-relaxed text-rose-800">Si cada cliente vale <span class="font-extrabold">$200.000</span> y pierdes 10 al mes, estas dejando <span class="font-extrabold">$2.000.000</span> sobre la mesa.</p>
       </article>
-      <article class="surface-card p-6" data-reveal style="transition-delay:80ms">
-        <p class="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">Solucion</p>
-        <h2 class="mt-2 text-2xl font-black text-slate-900">Chatbot para clinicas esteticas con enfoque comercial</h2>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">Automatizamos conversaciones, calificamos intencion de compra y guiamos al paciente a la cita sin depender de respuesta manual.</p>
-      </article>
-      <article class="surface-card p-6" data-reveal style="transition-delay:160ms">
-        <p class="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">Resultado</p>
-        <h2 class="mt-2 text-2xl font-black text-slate-900">Mas citas por WhatsApp con menos esfuerzo operativo</h2>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">Tu equipo invierte tiempo en pacientes de valor, mientras la automatizacion hace seguimiento y evita perdidas de conversion.</p>
+      <article class="rounded-2xl border border-emerald-200 bg-emerald-50 p-6" data-reveal style="transition-delay:90ms">
+        <p class="text-xs font-bold uppercase tracking-[0.14em] text-emerald-700">Solucion</p>
+        <h2 class="mt-2 text-2xl font-black text-emerald-900">No es solo un chatbot</h2>
+        <p class="mt-3 text-sm leading-relaxed text-emerald-800">Es un sistema que hace seguimiento hasta convertir cada conversacion en una cita.</p>
+        <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary mt-5" data-cta-whatsapp="pain_section_cta">Ver demo en WhatsApp</a>
       </article>
     </div>
   </section>
@@ -103,25 +100,25 @@ const faqs = [
     </div>
   </section>
 
-  <Features heading="Beneficios directos para conversion, agenda y caja" items={benefits} />
+  <Features heading="Beneficios directos para vender mas por WhatsApp" items={benefits} />
 
   <section class="mx-auto w-full max-w-6xl px-4 py-14 md:px-8 md:py-18">
-    <h2 class="text-balance text-3xl font-black text-slate-900 md:text-4xl" data-reveal>Como funciona en 3 pasos</h2>
+    <h2 class="text-balance text-3xl font-black text-slate-900 md:text-4xl" data-reveal>Como funciona (ultra simple)</h2>
     <div class="mt-8 grid gap-4 md:grid-cols-3">
       <article class="surface-card p-6" data-reveal>
-        <p class="text-xs font-bold uppercase tracking-wide text-slate-500">Paso 1</p>
-        <h3 class="mt-2 text-lg font-bold text-slate-900">Mapeo comercial de tratamientos</h3>
-        <p class="mt-2 text-sm text-slate-600">Definimos preguntas clave, perfiles de paciente y argumentos comerciales para cada servicio.</p>
+        <p class="text-xs font-bold uppercase tracking-wide text-slate-500">1</p>
+        <h3 class="mt-2 text-lg font-bold text-slate-900">El cliente escribe</h3>
+        <p class="mt-2 text-sm text-slate-600">Llega el mensaje por WhatsApp desde Instagram, pauta o referido.</p>
       </article>
       <article class="surface-card p-6" data-reveal style="transition-delay:90ms">
-        <p class="text-xs font-bold uppercase tracking-wide text-slate-500">Paso 2</p>
-        <h3 class="mt-2 text-lg font-bold text-slate-900">Activacion del bot WhatsApp Medellin</h3>
-        <p class="mt-2 text-sm text-slate-600">La IA responde al instante, segmenta prospectos y recomienda siguiente paso para cerrar cita.</p>
+        <p class="text-xs font-bold uppercase tracking-wide text-slate-500">2</p>
+        <h3 class="mt-2 text-lg font-bold text-slate-900">El sistema responde y califica</h3>
+        <p class="mt-2 text-sm text-slate-600">Pregunta, segmenta y filtra para identificar prospectos con mas intencion de compra.</p>
       </article>
       <article class="surface-card p-6" data-reveal style="transition-delay:180ms">
-        <p class="text-xs font-bold uppercase tracking-wide text-slate-500">Paso 3</p>
-        <h3 class="mt-2 text-lg font-bold text-slate-900">Agenda y seguimiento automatico</h3>
-        <p class="mt-2 text-sm text-slate-600">Confirmamos citas, enviamos recordatorios y recuperamos indecisos con mensajes estrategicos.</p>
+        <p class="text-xs font-bold uppercase tracking-wide text-slate-500">3</p>
+        <h3 class="mt-2 text-lg font-bold text-slate-900">Se agenda la cita automaticamente</h3>
+        <p class="mt-2 text-sm text-slate-600">El prospecto pasa a cita confirmada y seguimiento sin depender de respuesta manual.</p>
       </article>
     </div>
     <div class="mt-8 flex justify-center" data-reveal>
@@ -134,21 +131,24 @@ const faqs = [
   <section class="mx-auto w-full max-w-6xl px-4 py-14 md:px-8 md:py-18">
     <h2 class="text-balance text-3xl font-black text-slate-900 md:text-4xl" data-reveal>Resultados de referencia en clinicas con alto volumen</h2>
     <div class="mt-8 grid gap-4 md:grid-cols-3">
-      <article class="surface-card p-6" data-reveal>
-        <p class="text-xs font-bold uppercase tracking-wide text-slate-500">Caso 1 · Clinica facial</p>
-        <p class="mt-3 text-3xl font-black text-slate-900">+34%</p>
-        <p class="mt-2 text-sm text-slate-600">Crecimiento de citas agendadas en 6 semanas.</p>
+      <article class="rounded-2xl border border-emerald-200 bg-emerald-50 p-6" data-reveal>
+        <p class="text-xs font-bold uppercase tracking-wide text-emerald-700">Caso 1 · Clinica facial</p>
+        <p class="mt-3 text-3xl font-black text-emerald-900">+34%</p>
+        <p class="mt-2 text-sm text-emerald-800">Crecimiento de citas agendadas en 6 semanas.</p>
       </article>
-      <article class="surface-card p-6" data-reveal style="transition-delay:90ms">
-        <p class="text-xs font-bold uppercase tracking-wide text-slate-500">Caso 2 · Depilacion laser</p>
-        <p class="mt-3 text-3xl font-black text-slate-900">-61%</p>
-        <p class="mt-2 text-sm text-slate-600">Reduccion de chats perdidos sin seguimiento.</p>
+      <article class="rounded-2xl border border-emerald-200 bg-emerald-50 p-6" data-reveal style="transition-delay:90ms">
+        <p class="text-xs font-bold uppercase tracking-wide text-emerald-700">Caso 2 · Depilacion laser</p>
+        <p class="mt-3 text-3xl font-black text-emerald-900">-61%</p>
+        <p class="mt-2 text-sm text-emerald-800">Reduccion de chats perdidos sin seguimiento.</p>
       </article>
-      <article class="surface-card p-6" data-reveal style="transition-delay:180ms">
-        <p class="text-xs font-bold uppercase tracking-wide text-slate-500">Caso 3 · Clinica corporal</p>
-        <p class="mt-3 text-3xl font-black text-slate-900">&lt; 1 min</p>
-        <p class="mt-2 text-sm text-slate-600">Tiempo de primera respuesta en WhatsApp.</p>
+      <article class="rounded-2xl border border-emerald-200 bg-emerald-50 p-6" data-reveal style="transition-delay:180ms">
+        <p class="text-xs font-bold uppercase tracking-wide text-emerald-700">Caso 3 · Clinica corporal</p>
+        <p class="mt-3 text-3xl font-black text-emerald-900">&lt; 1 min</p>
+        <p class="mt-2 text-sm text-emerald-800">Tiempo de primera respuesta en WhatsApp.</p>
       </article>
+    </div>
+    <div class="mt-7 flex justify-center" data-reveal>
+      <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary" data-cta-whatsapp="home_results_cta">Ver demo en WhatsApp</a>
     </div>
   </section>
 
@@ -167,8 +167,9 @@ const faqs = [
   </section>
 
   <CTASection
-    title="Tu siguiente paciente ya escribio. J&C Studio te ayuda a no perderlo."
-    description="Agenda una asesoria por WhatsApp y te mostramos como aumentar mas citas por WhatsApp con una implementacion clara, medible y sin frenar tu operacion diaria."
+    title="Si hoy respondes tarde, hoy mismo estas perdiendo dinero"
+    description="Agenda una asesoria por WhatsApp y te mostramos como convertir mas conversaciones en citas y mas citas en ingresos para tu clinica."
+    buttonText="Ver demo en WhatsApp"
     buttonHref={WHATSAPP_LINK}
   />
 </Layout>
