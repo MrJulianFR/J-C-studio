@@ -1,0 +1,42 @@
+---
+import CTASection from '../components/CTASection.astro';
+import Layout from '../layouts/Layout.astro';
+import { SITE, WHATSAPP_LINK } from '../data/site';
+---
+
+<Layout
+  title="Contacto J&C Studio | chatbot para clinicas esteticas en Medellin"
+  description="Habla con J&C Studio y recibe una propuesta de automatizacion WhatsApp clinicas para generar mas citas por WhatsApp."
+  path="/contacto"
+>
+  <section class="mx-auto w-full max-w-6xl px-4 py-14 md:px-8 md:py-18" data-reveal>
+    <p class="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-700">Contacto</p>
+    <h1 class="mt-4 text-balance text-4xl font-black leading-tight text-slate-900 md:text-5xl">Agenda una llamada y descubre cuantas citas estas perdiendo hoy</h1>
+    <p class="mt-5 max-w-3xl text-lg text-slate-600">En una sesion corta te mostramos como automatizar WhatsApp en tu clinica para responder mas rapido, vender mejor y recuperar prospectos frios.</p>
+
+    <div class="mt-10 grid gap-5 md:grid-cols-2">
+      <article class="surface-card p-6" data-reveal>
+        <h2 class="text-2xl font-black text-slate-900">Canales directos</h2>
+        <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary mx-auto mt-4" data-cta-whatsapp="contact_card">Escribenos por WhatsApp</a>
+        <p class="mt-4 text-sm text-slate-600">Email: <a href={`mailto:${SITE.email}`} class="font-semibold text-slate-800">{SITE.email}</a></p>
+        <p class="mt-2 text-sm text-slate-600">Telefono: <a href={`tel:${SITE.phone.replaceAll(' ', '')}`} class="font-semibold text-slate-800">{SITE.phone}</a></p>
+      </article>
+
+      <article class="surface-card p-6" data-reveal style="transition-delay:100ms">
+        <h2 class="text-2xl font-black text-slate-900">Que recibes en la asesoria</h2>
+        <ul class="mt-4 space-y-2 text-sm text-slate-600">
+          <li>Diagnostico de conversion de tu WhatsApp actual.</li>
+          <li>Mapa de automatizacion por tipo de tratamiento.</li>
+          <li>Estimado de impacto en citas y seguimiento.</li>
+          <li>Plan de implementacion sin frenar tu operacion.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <CTASection
+    title="Tu competencia responde mas rapido. Tu tambien deberias hacerlo."
+    description="Activa tu bot WhatsApp Medellin y deja de perder pacientes por demora en respuesta."
+    buttonHref={WHATSAPP_LINK}
+  />
+</Layout>

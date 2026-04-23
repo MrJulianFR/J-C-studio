@@ -1,0 +1,36 @@
+---
+import CTASection from '../../components/CTASection.astro';
+import Layout from '../../layouts/Layout.astro';
+import { WHATSAPP_LINK } from '../../data/site';
+---
+
+<Layout
+  title="Citas automaticas clinicas por WhatsApp: framework de conversion | J&C Studio"
+  description="Framework para generar mas citas por WhatsApp en clinicas esteticas: atraccion, calificacion, agenda y seguimiento."
+  path="/blog/citas-automaticas-clinicas-whatsapp"
+>
+  <article class="mx-auto w-full max-w-3xl px-4 py-14 md:px-8 md:py-18" data-reveal>
+    <h1 class="text-balance text-4xl font-black leading-tight text-slate-900">Citas automaticas clinicas: framework para llenar agenda sin aumentar nomina</h1>
+    <p class="mt-6 text-slate-700">Cuando una clinica organiza su WhatsApp como embudo comercial, cada mensaje tiene objetivo: informar, calificar o cerrar. Este framework te ayuda a lograrlo.</p>
+
+    <h2 class="mt-10 text-2xl font-black text-slate-900">Atraccion</h2>
+    <p class="mt-3 text-slate-700">Conecta tus campanas y redes al WhatsApp con mensajes de entrada claros por servicio y promocion.</p>
+
+    <h2 class="mt-10 text-2xl font-black text-slate-900">Calificacion</h2>
+    <p class="mt-3 text-slate-700">El bot recoge informacion clave para que el asesor reciba contexto y avance mas rapido al cierre.</p>
+
+    <h2 class="mt-10 text-2xl font-black text-slate-900">Agenda</h2>
+    <p class="mt-3 text-slate-700">Propone horario, confirma y envia recordatorio. Este paso impacta directo la asistencia real a valoracion.</p>
+
+    <h2 class="mt-10 text-2xl font-black text-slate-900">Seguimiento</h2>
+    <p class="mt-3 text-slate-700">Todo prospecto no cerrado entra en secuencia automatizada para recuperar conversion sin perseguir manualmente cada chat.</p>
+
+    <p class="mt-8 text-sm text-slate-600">Si quieres llevar este framework a tu negocio, revisa <a href="/servicios" class="font-semibold text-emerald-700 hover:text-emerald-900">nuestros servicios</a> o escribenos por <a href="/contacto" class="font-semibold text-emerald-700 hover:text-emerald-900">contacto directo</a>.</p>
+  </article>
+
+  <CTASection
+    title="Implementa este framework en tu clinica estetica"
+    description="Te entregamos un plan de automatizacion para que tu equipo consiga mas citas confirmadas cada semana."
+    buttonHref={WHATSAPP_LINK}
+  />
+</Layout>

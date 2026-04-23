@@ -1,0 +1,55 @@
+---
+import CTASection from '../components/CTASection.astro';
+import Features from '../components/Features.astro';
+import Layout from '../layouts/Layout.astro';
+import { WHATSAPP_LINK } from '../data/site';
+
+const serviceItems = [
+  {
+    title: 'Chatbot de primera respuesta',
+    description: 'Atiende mensajes en segundos, responde dudas frecuentes y evita que el prospecto abandone el chat.'
+  },
+  {
+    title: 'Calificacion automatica de prospectos',
+    description: 'Filtra interesados por tratamiento, presupuesto e intencion para priorizar cierres de alto valor.'
+  },
+  {
+    title: 'Citas automaticas clinicas',
+    description: 'Convierte conversaciones en citas confirmadas con menos friccion para paciente y recepcion.'
+  },
+  {
+    title: 'Seguimiento inteligente por WhatsApp',
+    description: 'Recupera leads frios con secuencias automaticas para mejorar conversion y ocupacion de agenda.'
+  }
+];
+---
+
+<Layout
+  title="Servicios J&C Studio | Automatizacion WhatsApp clinicas en Medellin"
+  description="Servicios de chatbot para clinicas esteticas: automatizacion WhatsApp clinicas, bot WhatsApp Medellin y seguimiento para mas citas por WhatsApp."
+  path="/servicios"
+>
+  <section class="mx-auto w-full max-w-6xl px-4 py-14 md:px-8 md:py-18" data-reveal>
+    <p class="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-sky-700">Servicios</p>
+    <h1 class="mt-4 text-balance text-4xl font-black leading-tight text-slate-900 md:text-5xl">Automatizacion WhatsApp clinicas para vender mas tratamientos</h1>
+    <p class="mt-5 max-w-3xl text-lg text-slate-600">Implementamos un sistema comercial completo para que tu clinica convierta cada mensaje en oportunidad real de cita y venta.</p>
+  </section>
+
+  <Features heading="Que incluye nuestro servicio" items={serviceItems} />
+
+  <section class="mx-auto w-full max-w-6xl px-4 py-12 md:px-8 md:py-16">
+    <h2 class="text-3xl font-black text-slate-900 md:text-4xl" data-reveal>Resultados esperados desde el primer mes</h2>
+    <ul class="mt-6 grid gap-3 text-sm text-slate-700 md:grid-cols-2">
+      <li class="surface-card p-4" data-reveal>Reducir el tiempo de respuesta en WhatsApp a menos de 1 minuto.</li>
+      <li class="surface-card p-4" data-reveal style="transition-delay:70ms">Incrementar citas agendadas con pacientes calificados.</li>
+      <li class="surface-card p-4" data-reveal style="transition-delay:140ms">Disminuir chats perdidos sin seguimiento comercial.</li>
+      <li class="surface-card p-4" data-reveal style="transition-delay:210ms">Aumentar productividad de recepcion y equipo de ventas.</li>
+    </ul>
+  </section>
+
+  <CTASection
+    title="Si hoy te escriben 50 personas, deberias convertir muchas mas en citas"
+    description="J&C Studio disena tu bot WhatsApp Medellin para que tu agenda no dependa de la velocidad manual del equipo."
+    buttonHref={WHATSAPP_LINK}
+  />
+</Layout>

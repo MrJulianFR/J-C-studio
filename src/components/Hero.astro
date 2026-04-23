@@ -1,0 +1,40 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  ctaText?: string;
+  ctaHref: string;
+}
+
+const { title, subtitle, ctaText = 'Escribenos por WhatsApp', ctaHref } = Astro.props;
+---
+
+<section class="relative overflow-hidden">
+  <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,_rgba(16,185,129,0.2),transparent_42%),radial-gradient(circle_at_bottom_left,_rgba(14,165,233,0.16),transparent_35%)]"></div>
+
+  <div class="mx-auto grid w-full max-w-6xl gap-9 px-4 py-14 md:grid-cols-[1.08fr_0.92fr] md:items-center md:gap-10 md:px-8 md:py-22 lg:py-24">
+    <div data-reveal="left">
+      <p class="mb-4 inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-emerald-700">
+        Chatbot para clinicas esteticas en Medellin
+      </p>
+      <h1 class="text-balance text-4xl font-black leading-[1.05] text-slate-900 md:text-5xl lg:text-[3.45rem]">{title}</h1>
+      <p class="mt-5 max-w-2xl text-[1.04rem] leading-relaxed text-slate-600 md:text-lg">{subtitle}</p>
+      <div class="mt-8 flex flex-wrap gap-3 md:gap-4">
+        <a href={ctaHref} target="_blank" rel="noopener noreferrer" class="btn-primary" data-cta-whatsapp="hero_primary">{ctaText}</a>
+        <a href="/como-funciona" class="btn-secondary">Ver como funciona</a>
+      </div>
+      <p class="mt-4 text-xs font-medium text-slate-500">Implementacion guiada por J&C Studio. Sin friccion para tu equipo.</p>
+    </div>
+
+    <aside data-reveal="right" class="surface-card rounded-3xl p-6 md:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900 md:text-2xl">Cada minuto sin responder puede costarte una cita.</h2>
+      <ul class="mt-5 space-y-3 text-sm leading-relaxed text-slate-600">
+        <li class="flex gap-3"><span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500"></span>Respuesta automatica en segundos, 24/7</li>
+        <li class="flex gap-3"><span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500"></span>Calificacion de pacientes por interes y presupuesto</li>
+        <li class="flex gap-3"><span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500"></span>Agenda de citas automatica sin chats perdidos</li>
+        <li class="flex gap-3"><span class="mt-1.5 h-2 w-2 rounded-full bg-emerald-500"></span>Seguimiento inteligente para recuperar indecisos</li>
+      </ul>
+      <a href={ctaHref} target="_blank" rel="noopener noreferrer" class="btn-primary mt-6 w-full" data-cta-whatsapp="hero_card">Recibir demo por WhatsApp</a>
+    </aside>
+  </div>
+</section>

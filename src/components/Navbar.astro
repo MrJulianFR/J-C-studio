@@ -1,0 +1,138 @@
+---
+import { NAV_LINKS, SITE, WHATSAPP_LINK } from '../data/site';
+
+const pathname = Astro.url.pathname;
+---
+
+<header id="site-header" class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-md">
+  <div class="nav-shell mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 md:px-8 md:py-4">
+    <a href="/" class="text-lg font-extrabold tracking-tight text-slate-900">{SITE.brand}</a>
+
+    <nav class="hidden items-center gap-6 md:flex" aria-label="Navegacion principal desktop">
+      {
+        NAV_LINKS.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'text-sm font-semibold transition-colors hover:text-slate-900',
+              pathname === link.href ? 'text-slate-900' : 'text-slate-600'
+            ]}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="hidden md:block">
+      <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary" data-cta-whatsapp="navbar_desktop">Escribenos</a>
+    </div>
+
+    <button
+      id="menu-toggle"
+      type="button"
+      class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 transition hover:bg-slate-50 md:hidden"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="Abrir menu"
+    >
+      <svg id="menu-icon-open" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+      </svg>
+      <svg id="menu-icon-close" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden h-5 w-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6l-12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <nav
+    id="mobile-menu"
+    class="pointer-events-none max-h-0 overflow-hidden border-t border-slate-200 bg-white/96 opacity-0 transition-all duration-300 md:hidden"
+    aria-label="Navegacion principal mobile"
+  >
+    <div class="space-y-1 px-4 py-4">
+      {
+        NAV_LINKS.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'block rounded-xl px-3 py-2.5 text-sm font-semibold transition-colors',
+              pathname === link.href ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100'
+            ]}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary mt-3 w-full" data-cta-whatsapp="navbar_mobile">Hablar por WhatsApp</a>
+    </div>
+  </nav>
+</header>
+
+<script is:inline>
+  const header = document.getElementById('site-header');
+  const toggleButton = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  const setScrolledState = () => {
+    if (!header) return;
+    header.classList.toggle('is-scrolled', window.scrollY > 12);
+  };
+
+  const closeMenu = () => {
+    if (!toggleButton || !mobileMenu || !iconOpen || !iconClose) return;
+    toggleButton.setAttribute('aria-expanded', 'false');
+    toggleButton.setAttribute('aria-label', 'Abrir menu');
+    mobileMenu.classList.add('pointer-events-none', 'max-h-0', 'opacity-0');
+    mobileMenu.classList.remove('max-h-[70vh]', 'opacity-100');
+    iconOpen.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+  };
+
+  const openMenu = () => {
+    if (!toggleButton || !mobileMenu || !iconOpen || !iconClose) return;
+    toggleButton.setAttribute('aria-expanded', 'true');
+    toggleButton.setAttribute('aria-label', 'Cerrar menu');
+    mobileMenu.classList.remove('pointer-events-none', 'max-h-0', 'opacity-0');
+    mobileMenu.classList.add('max-h-[70vh]', 'opacity-100');
+    iconOpen.classList.add('hidden');
+    iconClose.classList.remove('hidden');
+  };
+
+  if (toggleButton && mobileMenu) {
+    toggleButton.addEventListener('click', () => {
+      const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+      isExpanded ? closeMenu() : openMenu();
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => closeMenu());
+    });
+
+    document.addEventListener('click', (event) => {
+      const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+      if (!isExpanded) return;
+      const target = event.target;
+      if (!(target instanceof Node)) return;
+      if (!header || header.contains(target)) return;
+      closeMenu();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        closeMenu();
+      }
+    });
+  }
+
+  setScrolledState();
+  window.addEventListener('scroll', setScrolledState, { passive: true });
+</script>

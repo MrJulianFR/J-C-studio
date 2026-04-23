@@ -1,0 +1,55 @@
+---
+import CTASection from '../components/CTASection.astro';
+import Layout from '../layouts/Layout.astro';
+import { WHATSAPP_LINK } from '../data/site';
+
+const useCases = [
+  {
+    title: 'Clinicas faciales con alta demanda en redes',
+    challenge: 'Reciben volumen alto de mensajes despues de campanas en Instagram y no alcanzan a responder.',
+    result: 'El bot filtra intencion, responde dudas frecuentes y agenda valoraciones en menos de 3 minutos.'
+  },
+  {
+    title: 'Centros de depilacion laser',
+    challenge: 'Prospectos preguntan precios y zonas, pero no pasan al siguiente paso.',
+    result: 'Automatizamos guion comercial para capturar datos, explicar paquetes y cerrar cita inicial.'
+  },
+  {
+    title: 'Clinicas corporales premium',
+    challenge: 'Mucho lead curioso, poco lead calificado y equipo saturado en WhatsApp.',
+    result: 'Se califica por presupuesto e interes para priorizar leads de alto valor y mejorar conversion.'
+  }
+];
+---
+
+<Layout
+  title="Casos de uso | J&C Studio bot WhatsApp Medellin para clinicas"
+  description="Casos de uso de chatbot para clinicas esteticas en Medellin: automatizacion WhatsApp clinicas, mas citas por WhatsApp y mejor seguimiento."
+  path="/casos-de-uso"
+>
+  <section class="mx-auto w-full max-w-6xl px-4 py-14 md:px-8 md:py-18" data-reveal>
+    <p class="inline-flex rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-violet-700">Casos de uso</p>
+    <h1 class="mt-4 text-balance text-4xl font-black leading-tight text-slate-900 md:text-5xl">Aplicaciones reales para clinicas esteticas en Medellin</h1>
+    <p class="mt-5 max-w-3xl text-lg text-slate-600">Cada clinica tiene un flujo distinto de ventas. Personalizamos la automatizacion para que se adapte a tu oferta y a tu paciente ideal.</p>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pb-10 md:px-8 md:pb-14">
+    <div class="space-y-4">
+      {
+        useCases.map((item, index) => (
+          <article class="surface-card p-6" data-reveal style={`transition-delay:${index * 80}ms`}>
+            <h2 class="text-2xl font-black text-slate-900">{item.title}</h2>
+            <p class="mt-3 text-sm text-slate-600"><span class="font-semibold text-slate-800">Reto:</span> {item.challenge}</p>
+            <p class="mt-2 text-sm text-slate-600"><span class="font-semibold text-slate-800">Resultado:</span> {item.result}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <CTASection
+    title="Evaluamos tu caso y te mostramos el flujo ideal"
+    description="Escribenos por WhatsApp y cuentanos que tratamientos vendes. Te compartimos una propuesta enfocada en resultados comerciales."
+    buttonHref={WHATSAPP_LINK}
+  />
+</Layout>

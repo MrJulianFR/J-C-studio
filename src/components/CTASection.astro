@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  buttonText?: string;
+  buttonHref: string;
+}
+
+const { title, description, buttonText = 'Escribenos por WhatsApp', buttonHref } = Astro.props;
+---
+
+<section class="mx-auto w-full max-w-6xl px-4 py-14 md:px-8 md:py-18" data-reveal>
+  <div class="relative overflow-hidden rounded-3xl border border-slate-800/10 bg-slate-900 p-8 text-center text-white shadow-2xl md:p-12">
+    <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_8%_12%,_rgba(52,211,153,0.28),transparent_35%),radial-gradient(circle_at_93%_80%,_rgba(14,165,233,0.25),transparent_34%)]"></div>
+    <h2 class="mx-auto max-w-4xl text-balance text-3xl font-black leading-tight md:text-4xl">{title}</h2>
+    <p class="mx-auto mt-4 max-w-3xl text-slate-200 md:text-lg">{description}</p>
+    <a href={buttonHref} target="_blank" rel="noopener noreferrer" class="btn-primary mx-auto mt-7" data-cta-whatsapp="section_cta">{buttonText}</a>
+  </div>
+</section>

@@ -1,23 +1,125 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import '../styles/global.css';
+import Footer from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import { SITE } from '../data/site';
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+}
+
+const { title, description, path = Astro.url.pathname } = Astro.props;
+const canonical = new URL(path, SITE.siteUrl).toString();
+const ogImage = `${SITE.siteUrl}/og-cover.svg`;
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: SITE.brand,
+  image: ogImage,
+  url: SITE.siteUrl,
+  telephone: SITE.phone,
+  email: SITE.email,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Medellin',
+    addressCountry: 'CO'
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Medellin'
+  },
+  knowsAbout: [
+    'automatizacion WhatsApp clinicas',
+    'bot WhatsApp Medellin',
+    'chatbot para clinicas esteticas',
+    'mas citas por WhatsApp',
+    'automatizacion para clinicas en Colombia'
+  ]
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.brand,
+  url: SITE.siteUrl,
+  inLanguage: 'es-CO'
+};
+---
+
+<!doctype html>
+<html lang="es-CO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index,follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={SITE.brand} />
+    <meta property="og:image" content={ogImage} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
+    <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-slate-900">
+      Saltar al contenido
+    </a>
+    <Navbar />
+    <main id="contenido">
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppFloat />
+
+    <script is:inline>
+      const revealElements = document.querySelectorAll('[data-reveal]');
+      if (revealElements.length > 0 && 'IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.14, rootMargin: '0px 0px -6% 0px' }
+        );
+
+        revealElements.forEach((element) => revealObserver.observe(element));
+      }
+
+      document.querySelectorAll('[data-cta-whatsapp]').forEach((element) => {
+        element.addEventListener('click', () => {
+          const source = element.getAttribute('data-cta-whatsapp') || 'unknown';
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'click_whatsapp', { source });
+          }
+          if (window.dataLayer && Array.isArray(window.dataLayer)) {
+            window.dataLayer.push({ event: 'click_whatsapp', source });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

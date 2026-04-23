@@ -1,0 +1,59 @@
+---
+import CTASection from '../components/CTASection.astro';
+import Layout from '../layouts/Layout.astro';
+import { WHATSAPP_LINK } from '../data/site';
+---
+
+<Layout
+  title="Como funciona | J&C Studio automatizacion para clinicas en Colombia"
+  description="Proceso J&C Studio para chatbot para clinicas esteticas: estrategia, implementacion y optimizacion para mas citas por WhatsApp."
+  path="/como-funciona"
+>
+  <section class="mx-auto w-full max-w-6xl px-4 py-14 md:px-8 md:py-18" data-reveal>
+    <p class="inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-700">Proceso</p>
+    <h1 class="mt-4 text-balance text-4xl font-black leading-tight text-slate-900 md:text-5xl">Implementacion simple, resultados medibles</h1>
+    <p class="mt-5 max-w-3xl text-lg text-slate-600">Nuestra automatizacion para clinicas en Colombia se activa por fases para recuperar pacientes desde la primera semana.</p>
+  </section>
+
+  <section class="mx-auto grid w-full max-w-6xl gap-4 px-4 pb-6 md:grid-cols-3 md:px-8">
+    <article class="surface-card p-6" data-reveal>
+      <p class="text-xs font-bold uppercase tracking-wide text-slate-500">Fase 1</p>
+      <h2 class="mt-2 text-xl font-black text-slate-900">Diagnostico comercial</h2>
+      <p class="mt-3 text-sm text-slate-600">Auditamos conversaciones reales de WhatsApp, detectamos fugas de conversion y definimos metas de citas.</p>
+    </article>
+    <article class="surface-card p-6" data-reveal style="transition-delay:90ms">
+      <p class="text-xs font-bold uppercase tracking-wide text-slate-500">Fase 2</p>
+      <h2 class="mt-2 text-xl font-black text-slate-900">Configuracion del bot y flujos</h2>
+      <p class="mt-3 text-sm text-slate-600">Creamos respuestas, rutas de calificacion y mensajes de seguimiento segun cada tratamiento.</p>
+    </article>
+    <article class="surface-card p-6" data-reveal style="transition-delay:180ms">
+      <p class="text-xs font-bold uppercase tracking-wide text-slate-500">Fase 3</p>
+      <h2 class="mt-2 text-xl font-black text-slate-900">Activacion y optimizacion</h2>
+      <p class="mt-3 text-sm text-slate-600">Lanzamos, medimos indicadores de conversion y optimizamos para escalar mas citas por WhatsApp.</p>
+    </article>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 py-12 md:px-8 md:py-16">
+    <h2 class="text-3xl font-black text-slate-900 md:text-4xl" data-reveal>Metricas que seguimos contigo</h2>
+    <div class="mt-8 grid gap-4 md:grid-cols-3">
+      <div class="surface-card p-6" data-reveal>
+        <p class="text-3xl font-black text-slate-900">&lt; 1 min</p>
+        <p class="mt-2 text-sm text-slate-600">Tiempo promedio de primera respuesta</p>
+      </div>
+      <div class="surface-card p-6" data-reveal style="transition-delay:90ms">
+        <p class="text-3xl font-black text-slate-900">+25%</p>
+        <p class="mt-2 text-sm text-slate-600">Incremento esperado en citas agendadas</p>
+      </div>
+      <div class="surface-card p-6" data-reveal style="transition-delay:180ms">
+        <p class="text-3xl font-black text-slate-900">-40%</p>
+        <p class="mt-2 text-sm text-slate-600">Reduccion de chats perdidos sin seguimiento</p>
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="Conoce como se veria este flujo en tu clinica"
+    description="Te enviamos un ejemplo real para aumentar tus citas por WhatsApp con un bot comercial hecho a tu medida."
+    buttonHref={WHATSAPP_LINK}
+  />
+</Layout>

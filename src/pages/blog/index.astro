@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+  {
+    href: '/blog/chatbot-whatsapp-colombia-clinicas-esteticas',
+    title: 'Chatbot WhatsApp Colombia: guia para clinicas esteticas que quieren mas citas',
+    description: 'Como estructurar mensajes, filtros y seguimiento para convertir conversaciones en procedimientos.'
+  },
+  {
+    href: '/blog/automatizacion-whatsapp-clinicas-medellin',
+    title: 'Automatizacion WhatsApp clinicas en Medellin: errores que te hacen perder pacientes',
+    description: 'Los 7 errores mas comunes en WhatsApp comercial y como corregirlos con IA.'
+  },
+  {
+    href: '/blog/citas-automaticas-clinicas-whatsapp',
+    title: 'Citas automaticas clinicas: framework para llenar agenda sin aumentar nomina',
+    description: 'Un modelo simple para crecer citas confirmadas usando WhatsApp y seguimiento inteligente.'
+  }
+];
+---
+
+<Layout
+  title="Blog J&C Studio | automatizacion WhatsApp clinicas y conversion"
+  description="Contenido SEO sobre chatbot para clinicas esteticas, bot WhatsApp Medellin y mas citas por WhatsApp para clinicas en Colombia."
+  path="/blog"
+>
+  <section class="mx-auto w-full max-w-6xl px-4 py-14 md:px-8 md:py-18" data-reveal>
+    <p class="inline-flex rounded-full border border-slate-300 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-700">Blog SEO</p>
+    <h1 class="mt-4 text-balance text-4xl font-black leading-tight text-slate-900 md:text-5xl">Recursos para crecer tus citas por WhatsApp</h1>
+    <p class="mt-5 max-w-3xl text-lg text-slate-600">Contenido para directores de clinicas esteticas que quieren convertir mas conversaciones en pacientes reales.</p>
+
+    <div class="mt-10 grid gap-4 md:grid-cols-3">
+      {
+        posts.map((post, index) => (
+          <article class="surface-card p-6 transition hover:-translate-y-1 hover:shadow-lg" data-reveal style={`transition-delay:${index * 90}ms`}>
+            <h2 class="text-xl font-black text-slate-900">{post.title}</h2>
+            <p class="mt-3 text-sm text-slate-600">{post.description}</p>
+            <a href={post.href} class="mt-4 inline-flex text-sm font-semibold text-emerald-700 hover:text-emerald-900">Leer articulo</a>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
