@@ -80,7 +80,7 @@ const websiteSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}></script>
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
   </head>
-  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
+  <body class="min-h-screen antialiased">
     <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-slate-900">
       Saltar al contenido
     </a>
@@ -92,7 +92,21 @@ const websiteSchema = {
     <WhatsAppFloat />
 
     <script is:inline>
-      const revealElements = document.querySelectorAll('[data-reveal]');
+      const autoRevealSelectors = [
+        'main section h2',
+        'main section h3',
+        'main section .surface-card',
+        'main section details',
+        'main section article'
+      ];
+
+      document.querySelectorAll(autoRevealSelectors.join(',')).forEach((element) => {
+        if (!element.hasAttribute('data-reveal')) {
+          element.classList.add('auto-reveal');
+        }
+      });
+
+      const revealElements = document.querySelectorAll('[data-reveal], .auto-reveal');
       if (revealElements.length > 0 && 'IntersectionObserver' in window) {
         const revealObserver = new IntersectionObserver(
           (entries, observer) => {

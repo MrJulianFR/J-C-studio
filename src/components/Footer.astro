@@ -2,25 +2,25 @@
 import { SITE, WHATSAPP_LINK } from '../data/site';
 ---
 
-<footer class="mt-8 border-t border-slate-200/80 bg-white/90 backdrop-blur-sm">
+<footer class="mt-8 border-t border-white/10 bg-[#0B1A2B]">
   <div class="mx-auto grid w-full max-w-6xl gap-8 px-4 py-12 md:grid-cols-3 md:px-8">
     <div data-reveal>
-      <p class="text-xl font-black text-slate-900">{SITE.brand}</p>
-      <p class="mt-2 max-w-sm text-sm leading-relaxed text-slate-600">Automatizacion para clinicas en Colombia enfocada en mas citas por WhatsApp, mas conversion y mejor seguimiento comercial.</p>
+      <p class="text-xl font-black text-white">{SITE.brand}</p>
+      <p class="mt-2 max-w-sm text-sm leading-relaxed text-slate-400">Automatizacion para clinicas en Colombia enfocada en mas citas por WhatsApp, mas conversion y mejor seguimiento comercial.</p>
     </div>
     <div data-reveal>
-      <p class="text-sm font-semibold uppercase tracking-wide text-slate-900">Contacto</p>
-      <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" class="mt-2 block text-sm text-slate-600 transition hover:text-slate-900">WhatsApp directo</a>
-      <a href={`mailto:${SITE.email}`} class="block text-sm text-slate-600 transition hover:text-slate-900">{SITE.email}</a>
-      <a href={`tel:${SITE.phone.replaceAll(' ', '')}`} class="block text-sm text-slate-600 transition hover:text-slate-900">{SITE.phone}</a>
+      <p class="text-sm font-semibold uppercase tracking-wide text-white">Contacto</p>
+      <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" class="mt-2 block text-sm text-slate-400 transition hover:text-[#25D366]">WhatsApp directo</a>
+      <a href={`mailto:${SITE.email}`} class="block text-sm text-slate-400 transition hover:text-white">{SITE.email}</a>
+      <a href={`tel:${SITE.phone.replaceAll(' ', '')}`} class="block text-sm text-slate-400 transition hover:text-white">{SITE.phone}</a>
     </div>
     <div data-reveal>
-      <p class="text-sm font-semibold uppercase tracking-wide text-slate-900">Enlaces</p>
-      <a href="/servicios" class="mt-2 block text-sm text-slate-600 transition hover:text-slate-900">Servicios</a>
-      <a href="/como-funciona" class="block text-sm text-slate-600 transition hover:text-slate-900">Como funciona</a>
-      <a href="/casos-de-uso" class="block text-sm text-slate-600 transition hover:text-slate-900">Casos de uso</a>
-      <a href="/blog" class="block text-sm text-slate-600 transition hover:text-slate-900">Blog</a>
+      <p class="text-sm font-semibold uppercase tracking-wide text-white">Enlaces</p>
+      <a href="/servicios" class="mt-2 block text-sm text-slate-400 transition hover:text-white">Servicios</a>
+      <a href="/como-funciona" class="block text-sm text-slate-400 transition hover:text-white">Como funciona</a>
+      <a href="/casos-de-uso" class="block text-sm text-slate-400 transition hover:text-white">Casos de uso</a>
+      <a href="/blog" class="block text-sm text-slate-400 transition hover:text-white">Blog</a>
     </div>
   </div>
-  <div class="border-t border-slate-200/70 px-4 py-4 text-center text-xs text-slate-500 md:px-8">(c) {new Date().getFullYear()} {SITE.brand}. Todos los derechos reservados.</div>
+  <div class="border-t border-white/10 px-4 py-4 text-center text-xs text-slate-400 md:px-8">(c) {new Date().getFullYear()} {SITE.brand}. Todos los derechos reservados.</div>
 </footer>

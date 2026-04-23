@@ -52,27 +52,27 @@ const faqs = [
   <Hero
     title="Convierte mensajes de WhatsApp en citas automaticamente"
     subtitle="Implementamos un sistema que responde en segundos, hace seguimiento y convierte prospectos en pacientes sin que pierdas oportunidades."
-    primaryCtaText="Agendar auditoria gratuita"
+    primaryCtaText="📅 Agendar auditoria gratuita"
     primaryCtaHref={CALENDLY_LINK}
     secondaryCtaText="Hablar por WhatsApp"
     secondaryCtaHref={WHATSAPP_LINK}
   />
 
   <section class="mx-auto w-full max-w-6xl px-4 py-10 md:px-8 md:py-14">
-    <div class="rounded-3xl bg-[linear-gradient(145deg,#111827,#1f2937)] p-4 md:p-6">
+    <div class="rounded-3xl border border-white/10 bg-[#0F2438] p-4 md:p-6">
       <div class="grid gap-4 md:grid-cols-2">
-        <article class="rounded-2xl border border-rose-300/70 bg-rose-100 p-7 shadow-lg" data-reveal>
-          <p class="text-xs font-bold uppercase tracking-[0.14em] text-rose-700">Dolor real</p>
-          <h2 class="mt-2 text-2xl font-black text-rose-900">Responder tarde enfria el prospecto y te cuesta dinero</h2>
-          <p class="mt-4 text-sm leading-relaxed text-rose-900">Este mensaje valia <span class="text-3xl font-black text-rose-700">$300.000</span> y se perdio por responder tarde.</p>
-          <p class="mt-3 text-sm leading-relaxed text-rose-900">Si pierdes 10 leads al mes, estas dejando <span class="text-3xl font-black text-rose-700">millones sobre la mesa</span>.</p>
+        <article class="surface-card p-7 shadow-lg" data-reveal>
+          <p class="text-xs font-bold uppercase tracking-[0.14em] text-[#25D366]">Dolor real</p>
+          <h2 class="mt-2 text-2xl font-black text-white">Responder tarde enfria el prospecto y te cuesta dinero</h2>
+          <p class="mt-4 text-sm leading-relaxed text-slate-500">Este mensaje valia <span class="text-3xl font-black text-[#25D366]">$300.000</span> y se perdio por responder tarde.</p>
+          <p class="mt-3 text-sm leading-relaxed text-slate-500">Si pierdes 10 leads al mes, estas dejando <span class="text-3xl font-black text-[#25D366]">millones sobre la mesa</span>.</p>
         </article>
-        <article class="rounded-2xl border border-emerald-300/70 bg-emerald-100 p-7 shadow-lg" data-reveal style="transition-delay:90ms">
-          <p class="text-xs font-bold uppercase tracking-[0.14em] text-emerald-700">Solucion</p>
-          <h2 class="mt-2 text-2xl font-black text-emerald-900">No es solo un chatbot</h2>
-          <p class="mt-3 text-sm leading-relaxed text-emerald-900">Es un sistema que responde, hace seguimiento y convierte conversaciones en citas.</p>
+        <article class="surface-card p-7 shadow-lg" data-reveal style="transition-delay:90ms">
+          <p class="text-xs font-bold uppercase tracking-[0.14em] text-[#25D366]">Solucion</p>
+          <h2 class="mt-2 text-2xl font-black text-white">No es solo un chatbot</h2>
+          <p class="mt-3 text-sm leading-relaxed text-slate-500">Es un sistema que responde, hace seguimiento y convierte conversaciones en citas.</p>
           <div class="mt-5 flex flex-wrap gap-3">
-            <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary" data-cta-audit="pain_section_primary">Agendar auditoria gratuita</a>
+            <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary" data-cta-audit="pain_section_primary">📅 Agendar auditoria gratuita</a>
             <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" class="btn-secondary" data-cta-whatsapp="pain_section_secondary">WhatsApp</a>
           </div>
         </article>
@@ -86,44 +86,44 @@ const faqs = [
     <h2 class="text-balance text-3xl font-black text-slate-900 md:text-4xl" data-reveal>Como funciona (ultra simple)</h2>
     <div class="mt-8 grid gap-4 md:grid-cols-3">
       <article class="surface-card p-6" data-reveal>
-        <p class="text-xs font-bold uppercase tracking-wide text-slate-500">1</p>
+        <p class="text-xs font-bold uppercase tracking-wide text-[#25D366]">1</p>
         <h3 class="mt-2 text-lg font-bold text-slate-900">El cliente escribe</h3>
-        <p class="mt-2 text-sm text-slate-700">Llega el mensaje por WhatsApp desde Instagram, pauta o referido.</p>
+        <p class="mt-2 text-sm text-slate-600">Llega el mensaje por WhatsApp desde Instagram, pauta o referido.</p>
       </article>
       <article class="surface-card p-6" data-reveal style="transition-delay:90ms">
-        <p class="text-xs font-bold uppercase tracking-wide text-slate-500">2</p>
+        <p class="text-xs font-bold uppercase tracking-wide text-[#25D366]">2</p>
         <h3 class="mt-2 text-lg font-bold text-slate-900">El sistema responde y califica</h3>
-        <p class="mt-2 text-sm text-slate-700">Pregunta, segmenta y filtra para identificar prospectos con mas intencion de compra.</p>
+        <p class="mt-2 text-sm text-slate-600">Pregunta, segmenta y filtra para identificar prospectos con mas intencion de compra.</p>
       </article>
       <article class="surface-card p-6" data-reveal style="transition-delay:180ms">
-        <p class="text-xs font-bold uppercase tracking-wide text-slate-500">3</p>
+        <p class="text-xs font-bold uppercase tracking-wide text-[#25D366]">3</p>
         <h3 class="mt-2 text-lg font-bold text-slate-900">Se agenda la cita automaticamente</h3>
-        <p class="mt-2 text-sm text-slate-700">El prospecto pasa a cita confirmada y seguimiento sin depender de respuesta manual.</p>
+        <p class="mt-2 text-sm text-slate-600">El prospecto pasa a cita confirmada y seguimiento sin depender de respuesta manual.</p>
       </article>
     </div>
     <div class="mt-8 flex justify-center" data-reveal>
-      <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary" data-cta-audit="home_process_primary">Agendar auditoria gratuita</a>
+      <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary" data-cta-audit="home_process_primary">📅 Agendar auditoria gratuita</a>
     </div>
   </section>
 
   <section class="mx-auto w-full max-w-6xl px-4 py-14 md:px-8 md:py-18">
     <h2 class="text-balance text-3xl font-black text-slate-900 md:text-4xl" data-reveal>Resultados esperados para tu clinica</h2>
-    <p class="mt-3 text-slate-700" data-reveal>Proximamente: casos reales de clinicas en Medellin. Mientras tanto, estos son los objetivos que trabajamos en implementacion.</p>
+    <p class="mt-3 text-slate-600" data-reveal>Proximamente: casos reales de clinicas en Medellin. Mientras tanto, estos son los objetivos que trabajamos en implementacion.</p>
     <div class="mt-10 grid gap-6 md:grid-cols-3">
-      <article class="rounded-2xl border border-emerald-200 bg-emerald-50 p-7 shadow-lg" data-reveal>
-        <p class="text-xs font-bold uppercase tracking-wide text-emerald-700">Objetivo 1</p>
+      <article class="surface-card p-7" data-reveal>
+        <p class="text-xs font-bold uppercase tracking-wide text-[#25D366]">Objetivo 1</p>
         <p class="mt-3" data-metric-number>+30%</p>
-        <p class="mt-3 text-sm font-medium text-emerald-900/90">Incremento de citas agendadas.</p>
+        <p class="mt-3 text-sm font-medium text-slate-600">Incremento de citas agendadas.</p>
       </article>
-      <article class="rounded-2xl border border-emerald-200 bg-emerald-50 p-7 shadow-lg" data-reveal style="transition-delay:90ms">
-        <p class="text-xs font-bold uppercase tracking-wide text-emerald-700">Objetivo 2</p>
+      <article class="surface-card p-7" data-reveal style="transition-delay:90ms">
+        <p class="text-xs font-bold uppercase tracking-wide text-[#25D366]">Objetivo 2</p>
         <p class="mt-3" data-metric-number>-50%</p>
-        <p class="mt-3 text-sm font-medium text-emerald-900/90">Reduccion de chats perdidos sin seguimiento.</p>
+        <p class="mt-3 text-sm font-medium text-slate-600">Reduccion de chats perdidos sin seguimiento.</p>
       </article>
-      <article class="rounded-2xl border border-emerald-200 bg-emerald-50 p-7 shadow-lg" data-reveal style="transition-delay:180ms">
-        <p class="text-xs font-bold uppercase tracking-wide text-emerald-700">Objetivo 3</p>
+      <article class="surface-card p-7" data-reveal style="transition-delay:180ms">
+        <p class="text-xs font-bold uppercase tracking-wide text-[#25D366]">Objetivo 3</p>
         <p class="mt-3" data-metric-number>&lt; 1 min</p>
-        <p class="mt-3 text-sm font-medium text-emerald-900/90">Tiempo de primera respuesta en WhatsApp.</p>
+        <p class="mt-3 text-sm font-medium text-slate-600">Tiempo de primera respuesta en WhatsApp.</p>
       </article>
     </div>
   </section>
@@ -131,32 +131,32 @@ const faqs = [
   <section class="mx-auto w-full max-w-6xl px-4 py-14 md:px-8 md:py-18">
     <div class="grid gap-4 md:grid-cols-2">
       <article class="surface-card p-7" data-reveal>
-        <p class="text-xs font-bold uppercase tracking-wide text-slate-500">Inversion</p>
+        <p class="text-xs font-bold uppercase tracking-wide text-[#25D366]">Inversion</p>
         <h2 class="mt-2 text-3xl font-black text-slate-900">Precios claros desde el inicio</h2>
-        <p class="mt-4 text-slate-700"><span class="font-extrabold text-slate-900">Setup:</span> $1.500.000 - $2.500.000 COP</p>
-        <p class="mt-2 text-slate-700"><span class="font-extrabold text-slate-900">Mensual:</span> $800.000 - $1.200.000 COP</p>
-        <p class="mt-4 text-sm text-slate-600">La inversion depende del volumen de mensajes y del nivel de automatizacion.</p>
-        <p class="mt-3 text-sm font-semibold text-slate-800">Agenda una auditoria gratuita y te damos una propuesta exacta para tu clinica.</p>
+        <p class="mt-4 text-slate-600"><span class="font-extrabold text-white">Setup:</span> $1.500.000 - $2.500.000 COP</p>
+        <p class="mt-2 text-slate-600"><span class="font-extrabold text-white">Mensual:</span> $800.000 - $1.200.000 COP</p>
+        <p class="mt-4 text-sm text-slate-500">La inversion depende del volumen de mensajes y del nivel de automatizacion.</p>
+        <p class="mt-3 text-sm font-semibold text-white">Agenda una auditoria gratuita y te damos una propuesta exacta para tu clinica.</p>
       </article>
       <article class="surface-card p-7" data-reveal style="transition-delay:90ms">
-        <p class="text-xs font-bold uppercase tracking-wide text-slate-500">Urgencia real</p>
+        <p class="text-xs font-bold uppercase tracking-wide text-[#25D366]">Urgencia real</p>
         <h2 class="mt-2 text-3xl font-black text-slate-900">Solo trabajamos con 3 clinicas nuevas al mes</h2>
-        <p class="mt-4 text-slate-700">Cupos de abril: <span class="font-extrabold text-emerald-700">1 de 3 disponibles</span>.</p>
-        <p class="mt-3 text-sm text-slate-600">Nos enfocamos en pocas implementaciones para garantizar resultados y acompanamiento cercano.</p>
+        <p class="mt-4 text-slate-600">Cupos de abril: <span class="font-extrabold text-[#25D366]">1 de 3 disponibles</span>.</p>
+        <p class="mt-3 text-sm text-slate-500">Nos enfocamos en pocas implementaciones para garantizar resultados y acompanamiento cercano.</p>
       </article>
     </div>
     <div class="mt-8 flex flex-wrap justify-center gap-3" data-reveal>
-      <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary" data-cta-audit="pricing_urgency_primary">Agendar auditoria gratuita</a>
+      <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary" data-cta-audit="pricing_urgency_primary">📅 Agendar auditoria gratuita</a>
       <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" class="btn-secondary" data-cta-whatsapp="pricing_urgency_secondary">Resolver dudas por WhatsApp</a>
     </div>
   </section>
 
   <section class="mx-auto w-full max-w-6xl px-4 py-14 md:px-8 md:py-18">
-    <article class="surface-card border-2 border-emerald-200 p-8 text-center" data-reveal>
-      <p class="text-xs font-bold uppercase tracking-wide text-emerald-700">Garantia</p>
+    <article class="surface-card border border-white/20 p-8 text-center" data-reveal>
+      <p class="text-xs font-bold uppercase tracking-wide text-[#25D366]">Garantia</p>
       <h2 class="mt-2 text-3xl font-black text-slate-900">Garantia 60 dias: si no ves resultados, devolucion 100%</h2>
-      <p class="mt-4 text-slate-700">Buscamos relaciones de largo plazo. Si no vemos mejora clara en tiempos de respuesta y conversion, asumimos el riesgo contigo.</p>
-      <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary mt-6" data-cta-audit="guarantee_primary">Agendar auditoria gratuita</a>
+      <p class="mt-4 text-slate-600">Buscamos relaciones de largo plazo. Si no vemos mejora clara en tiempos de respuesta y conversion, asumimos el riesgo contigo.</p>
+      <a href={CALENDLY_LINK} target="_blank" rel="noopener noreferrer" class="btn-primary mt-6" data-cta-audit="guarantee_primary">📅 Agendar auditoria gratuita</a>
     </article>
   </section>
 
@@ -167,7 +167,7 @@ const faqs = [
         faqs.map((faq, index) => (
           <details class="surface-card p-5" data-reveal style={`transition-delay:${index * 70}ms`}>
             <summary class="cursor-pointer list-none text-base font-bold text-slate-900">{faq.q}</summary>
-            <p class="mt-3 text-sm leading-relaxed text-slate-700">{faq.a}</p>
+            <p class="mt-3 text-sm leading-relaxed text-slate-600">{faq.a}</p>
           </details>
         ))
       }
@@ -177,7 +177,7 @@ const faqs = [
   <CTASection
     title="Tu siguiente cita puede estar en el proximo mensaje"
     description="Agenda una auditoria gratuita y te mostramos exactamente como convertir mas conversaciones en ingresos para tu clinica."
-    primaryButtonText="Agendar auditoria gratuita"
+    primaryButtonText="📅 Agendar auditoria gratuita"
     primaryButtonHref={CALENDLY_LINK}
     secondaryButtonText="Hablar por WhatsApp"
     secondaryButtonHref={WHATSAPP_LINK}
